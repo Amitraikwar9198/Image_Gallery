@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Gallery</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📸Image Gallery</h1>
+            <p>responsive, and interactive photo gallery</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-controls">
+                <div class="file-input-wrapper">
+                    <input type="file" id="imageUpload" accept="image/*" multiple>
+                    <label for="imageUpload" class="file-input-label">
+                        📁 Upload Images
+                    </label>
+                </div>
+                <select id="categorySelect">
+                    <option value="Nature">🌲 Nature</option>
+                    <option value="Architecture">🏛️ Architecture</option>
+                    <option value="Anime">👤 Anime</option>
+                    <option value="Animals">🐾 Animals</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Nature">🌲 Nature</button>
+            <button class="filter-btn" data-filter="Architecture">🏛️ Architecture</button>
+            <button class="filter-btn" data-filter="Anime">👤 Anime</button>
+            <button class="filter-btn" data-filter="Animals">🐾 Animals</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+            <!-- Images will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">×</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+            <img id="lightboxImg" src="" alt="">
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        </div>
+    </div>
+
+    <div class="mobile-footer">
+        <div class="mobile-nav">
+            <button onclick="showPrevious()">← Previous</button>
+            <button onclick="filterImages('all')">Show All</button>
+            <button onclick="showNext()">Next →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
